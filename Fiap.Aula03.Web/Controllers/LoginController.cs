@@ -19,9 +19,11 @@ namespace Fiap.Aula03.Web.Controllers
         [HttpPost] //Receber os parâmetros do formulário
         public IActionResult Logar(Login login)
         {
+            //ViewData["churros"] = login; objeto inteiro
             ViewData["churros"] = login.Usuario;
             ViewBag.abobora = login;
-            return View("Logado");
+            return View("Logado", login);
+            //Return content($"Usuário: {login.Usuario")
         }
 
     }

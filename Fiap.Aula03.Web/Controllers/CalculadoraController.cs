@@ -18,9 +18,12 @@ namespace Fiap.Aula03.Web.Controllers
         [HttpPost]
         public IActionResult Calculadora(int number, int number2)
         {
-            
-            ViewBag.abobora = number + number2;
-            return View("Resultado");
+            var soma = number + number2;
+            TempData["resultado"] = soma;
+            // ViewBag.abobora = soma;
+            //return View("Resultado");
+            //return View();
+            return RedirectToAction("Calculadora");
         }
     }
 }
